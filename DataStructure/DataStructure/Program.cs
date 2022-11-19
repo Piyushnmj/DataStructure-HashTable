@@ -27,62 +27,10 @@
             hash.Add(17, "avoidable");
             hash.Add(18, "situations");
 
-            string hash0 = hash.Get(0);
-            Console.WriteLine("0th index value   : " + hash0);
-
-            string hash1 = hash.Get(1);
-            Console.WriteLine("1st index value   : " + hash1);
-
-            string hash2 = hash.Get(2);
-            Console.WriteLine("2nd index value   : " + hash2);
-
-            string hash3 = hash.Get(3);
-            Console.WriteLine("3rd index value   : " + hash3);
-
-            string hash4 = hash.Get(4);
-            Console.WriteLine("4th index value   : " + hash4);
-
-            string hash5 = hash.Get(5);
-            Console.WriteLine("5th index value   : " + hash5);
-
-            string hash6 = hash.Get(6);
-            Console.WriteLine("6th index value   : " + hash6);
-
-            string hash7 = hash.Get(7);
-            Console.WriteLine("7th index value   : " + hash7);
-
-            string hash8 = hash.Get(8);
-            Console.WriteLine("8th index value   : " + hash8);
-
-            string hash9 = hash.Get(9);
-            Console.WriteLine("9th index value   : " + hash9);
-
-            string hash10 = hash.Get(10);
-            Console.WriteLine("10th index value  : " + hash10);
-
-            string hash11 = hash.Get(11);
-            Console.WriteLine("11th index value  : " + hash11);
-
-            string hash12 = hash.Get(12);
-            Console.WriteLine("12th index value  : " + hash12);
-
-            string hash13 = hash.Get(13);
-            Console.WriteLine("13th index value  : " + hash13);
-
-            string hash14 = hash.Get(14);
-            Console.WriteLine("14th index value  : " + hash14);
-
-            string hash15 = hash.Get(15);
-            Console.WriteLine("15th index value  : " + hash15);
-
-            string hash16 = hash.Get(16);
-            Console.WriteLine("16th index value  : " + hash16);
-
-            string hash17 = hash.Get(17);
-            Console.WriteLine("17th index value  : " + hash17);
-
-            string hash18 = hash.Get(18);
-            Console.WriteLine("18th index value  : " + hash18);
+            for (int i = 0; i < hash.size; i++)
+            {
+                Console.WriteLine($"{i} index value : {hash.Get(i)}");
+            }
 
             Console.WriteLine("\nFrequency of Words ==> ");
 
