@@ -8,8 +8,8 @@ namespace DataStructure
 {
     public class MyMapNode<K, V>
     {
-        private readonly int size;
-        private readonly LinkedList<KeyValue<K, V>>[] items;
+        public readonly int size;
+        public readonly LinkedList<KeyValue<K, V>>[] items;
 
         public MyMapNode(int size)
         {
@@ -45,26 +45,6 @@ namespace DataStructure
             linkedList.AddLast(item);
         }
 
-        public void Remove(K key)
-        {
-            int position = GetArrayPosition(key);
-            LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
-            bool itemFound = false;
-            KeyValue<K, V> foundItem = default(KeyValue<K, V>);
-            foreach (KeyValue<K, V> item in linkedList)
-            {
-                if (item.Key.Equals(key))
-                {
-                    itemFound = true;
-                    foundItem = item;
-                }
-            }
-            if (itemFound)
-            {
-                linkedList.Remove(foundItem);
-            }
-        }
-
         protected LinkedList<KeyValue<K, V>> GetLinkedList(int position)
         {
             LinkedList<KeyValue<K, V>> linkedList = items[position];
@@ -74,6 +54,29 @@ namespace DataStructure
                 items[position] = linkedList;
             }
             return linkedList;
+        }
+
+        public void FreqOfWords(string[] arr, int arrLength)
+        {
+            bool[] visited = new bool[arrLength];
+            for (int i = 0; i < arrLength; i++)
+            {
+                if (visited[i] == true)
+                {
+                    continue;
+                }
+
+                int count = 1;
+                for (int j = i + 1; j < arrLength; j++)
+                {
+                    if (arr[i] == arr[j])
+                    {
+                        visited[j] = true;
+                        count++;
+                    }
+                }
+                Console.WriteLine(arr[i] + " => repeated " + count + " times ");
+            }
         }
     }
 
